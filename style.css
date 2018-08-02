@@ -1,0 +1,124 @@
+    html, body {
+					position: relative;
+					height: 100%;
+					margin: 0;
+					padding: 0;
+					}
+    body {
+			font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+			font-size: 14px;
+			color:#000;
+			margin: 0;
+			padding: 0;
+			}
+.wrap {
+			width: 100%;
+			margin: auto;
+			padding-top:200px;
+			}
+	.header {
+				overflow: hidden;
+				width: 1910px;
+				}
+	.header-btn {
+						width: 1020px;	
+						margin: auto;
+						}	
+	.header h1 img {
+						width: 60px;
+						height: 45px;
+						padding: 10px;
+						float: left;
+						}
+	.header ul.menu {
+							overflow: hidden;
+							padding-left:173px;
+							float: left;
+							}					
+	.header ul.menu .first_menu {
+						float: left;
+						text-decoration:none;
+						font-size:18px;
+						padding-right:55px;
+						padding-top:20px;
+						text-align:center;
+						}
+	.header ul.menu .first_menu a {
+											text-decoration:none;	
+											}
+	.second_menu {
+						display: none;
+						padding-top:10px;
+						}
+	.second_menu li {
+							font-size:15px;
+							text-align:center;
+							padding-top:10px;
+							}
+	.second_menu li a {
+							text-decoration:none;
+							}
+	.header h2 img {
+						width: 22px;
+						height: 20px;
+						padding-top:22px;
+						}
+							
+	#item1 {
+				height: 500px;
+				width: 100%;
+				background:#00833f;
+				}
+	#item2 {height: 300px;background:#eef;}
+	#item3 {height: 400px;background:#aad;}
+	#item4 {height: 500px;background:#faa;}
+	#item5 {height: 600px;background:#fee;}
+	#item6 {height: 700px;background:#eef;}
+	#item7 {height: 800px;background:#aad;}
+	#item8 {height: 900px;background:#faa;}	
+	.item {
+			overflow: hidden;
+			width: 100%;
+			position: relative;
+			left: 25%;
+			}
+	.item li {
+				float: left;
+				width: 238px;
+				border: 1px solid #eee;
+				margin: 10px;
+				padding-bottom:100px;
+				}
+	.item li img {
+					width: 100%;
+					}		
+	.product {
+				position: relative;
+				}
+	.product div {
+					position: absolute;
+					width: 100%;
+					display: none;
+					}
+    .swiper-container {
+							width: 100%;
+							}
+    .swiper-slide {
+					text-align: center;
+					font-size: 18px;
+					background: #fff;
+					/* Center slide text vertically */
+					display: -webkit-box;
+					display: -ms-flexbox;
+					display: -webkit-flex;
+					display: flex;
+					-webkit-box-pack: center;
+					-ms-flex-pack: center;
+					-webkit-justify-content: center;
+					justify-content: center;
+					-webkit-box-align: center;
+					-ms-flex-align: center;
+					-webkit-align-items: center;
+					align-items: center;
+					}	
+	.swiper-slide img {width: 100%;}

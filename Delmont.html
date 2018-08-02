@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../reset.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="../css/swiper.min.css">
+	<script src="../js/swiper.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="../js/jquery.mousewheel.js"></script>	
+<script>
+	$(function(){
+		$('.item li a').click(function(e){
+			e.preventDefault();			
+			var href=$(this).attr('href')
+			var h=$(href).height()
+			//alert(h)
+			
+			var sw=$(this).hasClass('on')//활성화 되어 있나?
+			//alert(sw)
+			
+			$('.product').animate({'height':'0'})
+			
+			if(sw){ //활성화 되어있나를 체크해라
+			return false;
+			}
+		else{	
+			$(this).closest('.item').next().stop().animate({'height':h})
+			$('.item li a').removeClass('on')
+			$(this).addClass('on')//활성화 시켜라
+		}	
+			
+			// 현재 이벤트의 가장 가까이 있는 element(item) 옆에 있는(next) element를 지정
+			$('.product div').stop().fadeOut(500)			
+			$(href).stop().fadeIn(500)
+		});
+		
+		
+		$('.first_menu').mouseenter(function(){
+			$('.second_menu').stop().slideDown(500)
+		})
+		$('.first_menu').mouseleave(function(){
+			$('.second_menu').stop().slideUp(500)
+		});
+    var swiper = new Swiper('.swiper-container', {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });	
+	$('div').mousewheel(function(event,delta){
+		if(delta>0){
+			//alert('up')
+			var prev=$(this).prev().offset().top
+			$('html,body').stop().animate({scrollTop:prev},500)
+		}
+		else if(delta<0){
+			//alert('down')
+			var next=$(this).next().offset().top
+			$('html,body').stop().animate({scrollTop:next},500)
+		}
+	});	
+	})		
+</script>
+</head>
+<body>
+	<div class="header">
+	<div class="header-btn">
+		<h1><img src="img/logo.png" alt=""></h1>
+				<ul class="menu">
+					<li class="first_menu"><a href="#">델몬트</a>
+						<ul class="second_menu">
+							<li><a href="#">브랜드 스토리</a></li>
+							<li><a href="#">히스토리</a></li>
+							<li><a href="#">품질관리</a></li>
+							<li><a href="#">찾아오시는 길</a></li>
+						</ul>
+					</li>
+					<li class="first_menu"><a href="#">제품소개</a>
+						<ul class="second_menu">
+							<li><a href="#">신선과일 · 채소</a></li>
+							<li><a href="#">과일보감 · 채소보감</a></li>
+							<li><a href="#">B2B 제품</a></li>
+						</ul>
+					</li>
+					<li class="first_menu"><a href="#">레시피</a>
+						<ul class="second_menu">
+							<li><a href="#">레시피</a></li>
+						</ul>
+					</li>
+					<li class="first_menu"><a href="#">소식</a>
+						<ul class="second_menu">
+							<li><a href="#">뉴스</a></li>
+							<li><a href="#">광고</a></li>
+							<li><a href="#">캠페인</a></li>
+						</ul>
+					</li>
+					<li class="first_menu"><a href="#">이벤트</a>
+						<ul class="second_menu">
+							<li><a href="#">진행중인 이벤트</a></li>
+							<li><a href="#">지난 이벤트</a></li>
+						</ul>
+					</li>
+				</ul>
+			<h2><img src="img/btn_search.png" alt=""></h2>
+</div>
+
+	<div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="img/slide-img1.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="img/slide-img2.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="img/slide-img3.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="img/slide-img4.jpg" alt=""></div>
+    </div>
+	<div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>	
+	</div> 
+<div class="wrap">
+
+	<ul class="item">
+		<li><a href="#item1"><img src="img/banana.png" alt=""><span>델몬트 바나나</span></a></li>
+		<li><a href="#item2"><img src="img/pineapple.png" alt=""></a></li>
+		<li><a href="#item3"><img src="img/grape.png" alt=""></a></li>
+		<li><a href="#item4"><img src="img/orange.png" alt=""></a></li>
+	</ul>
+	<div class="product">
+		<div id="item1">바나나</div>
+		<div id="item2">파인애플</div>
+		<div id="item3">델몬트 포도</div>
+		<div id="item4">델몬트 오렌지</div>
+	</div>
+	<ul class="item">
+		<li><a href="#item5"><img src="img/banana.png" alt=""></a></li>
+		<li><a href="#item6"><img src="img/pineapple.png" alt=""></a></li>
+		<li><a href="#item7"><img src="img/grape.png" alt=""></a></li>
+		<li><a href="#item8"><img src="img/orange.png" alt=""></a></li>
+	</ul>
+	<div class="product">
+		<div id="item5">바나나</div>
+		<div id="item6">파인애플</div>
+		<div id="item7">델몬트 포도</div>
+		<div id="item8">델몬트 오렌지</div>
+	</div>		
+</div>
+
+	
+</body>
+</html>
